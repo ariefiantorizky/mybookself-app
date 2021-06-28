@@ -1,0 +1,407 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* button,
+* input {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+* i {
+  font-size: 20px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: rgb(231, 231, 231);
+}
+
+header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+header img {
+  width: 15rem;
+}
+
+header button {
+  padding: 8px 15px;
+  background: #1d3557;
+  border-radius: 2px;
+  color: #fff;
+}
+
+header button:last-child {
+  background: none;
+  color: #1d3557;
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+main .container {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+main .container .card {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 20px;
+  margin-top: 2rem;
+  border-radius: 3px;
+}
+
+main .container .card .header {
+  display: flex;
+  align-items: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+main .container .card .header i {
+  font-size: 2rem;
+  color: red;
+  font-weight: 900;
+}
+
+main .container .card .header i.bi-check {
+  color: green;
+}
+
+main .container .card .list-book .book {
+  padding: 12px;
+  box-shadow: 0 0 6px 0.3px rgba(0, 0, 0, 0.3);
+  margin: 8px auto;
+  border-radius: 3px;
+}
+
+main .container .card .list-book .book h3 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+main .container .card .list-book .book p,
+main .container .card .list-book .book span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 2px auto;
+  text-transform: capitalize;
+}
+
+main .container .card .list-book .book button {
+  background: rgb(9, 223, 9);
+  padding: 8px;
+  color: #fff;
+  margin: 20px 10px auto auto;
+  border-radius: 3px;
+}
+
+
+main .container .card .list-book .book button:last-child {
+  background: red;
+}
+
+
+main .container .card #list-book-completed .book button:first-child {
+  background: #1d3557;
+}
+
+main .container .card .list-book .book button i {
+  font-stretch: 2rem;
+}
+
+main .container-form,
+main .container-popup,
+main .container-about,
+main .container-popup-remove {
+  min-width: 100%;
+  min-height: 100%;
+  background: #1d35577a;
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+main .container-form.modals,
+main .container-popup.modals,
+main .container-about.modals,
+main .container-popup-remove.modals {
+  animation: modals 0.5s ease-in-out forwards alternate;
+  display: block;
+}
+
+@keyframes modals {
+  20% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.5;
+    transform: scale(0.6);
+  }
+
+  60% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+main .container-form form,
+main .container-popup .popup,
+main .container-about .about,
+main .container-popup-remove .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 4px;
+  width: 30%;
+  overflow: hidden;
+}
+
+
+main .container-popup .popup,
+main .container-popup-remove .popup {
+  overflow: visible;
+  height: 230px;
+  padding: 20px;
+}
+
+main .container-popup .popup img,
+main .container-popup-remove .popup img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 5rem;
+  border-radius: 100%;
+}
+
+main .container-popup-remove .popup img {
+  padding: 6px;
+}
+
+main .container-popup .popup h3,
+main .container-popup-remove .popup h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000;
+}
+
+main .container-popup .popup button,
+main .container-popup-remove .popup button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #1d3557;
+  border: 1px solid #1d3557;
+  padding: 8px 15px;
+  border-radius: 2px;
+  color: #fff;
+}
+
+main .container-popup-remove .popup button#ya-hapus {
+  background: none;
+  border: 1px solid #1d3557;
+  color: #1d3557;
+  right: 25%;
+}
+
+main .container-popup-remove .popup button#ya-hapus:hover {
+  background: #1d3557;
+  color: #fff;
+}
+
+main .container-form form .header-form {
+  width: 100%;
+  padding: 18px;
+  background: #1d3557;
+  color: #fff;
+  display: flex;
+}
+
+main .container-form form .header-form h3 {
+  font-family: "PT Sans", sans-serif;
+  margin: auto 5px;
+}
+
+main .container-form form .body-form {
+  padding: 12px;
+}
+
+main .container-form form .body-form .input-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto 8px auto;
+}
+
+main .container-form form .body-form .input-form label {
+  margin-bottom: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+main .container-form form .body-form .input-form input {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-family: "Open Sans", sans-serif;
+  cursor: text;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+main .container-form form .body-form .input-form input:focus {
+  border: 1.5px solid #1d3557;
+}
+
+main .container-form form .body-form button {
+  margin-top: 2rem;
+}
+
+main .container-form form .body-form button#simpan {
+  background: #1d3557;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 3px;
+}
+
+main .container-about .about {
+  padding: 15px;
+  height: 95%;
+  width: 40%;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+main .container-about .about img {
+  width: 10rem;
+}
+
+main .container-about .about h2 {
+  font-family: "PT Sans", sans-serif;
+  margin: auto auto 12px auto;
+}
+
+main .container-about .about p {
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+  text-indent: 2rem;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+main .container-about .about button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1d3557;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  main .container {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header img {
+    width: 12rem;
+  }
+
+  main .container-form form,
+  main .container-popup .popup,
+  main .container-about .about,
+  main .container-popup-remove .popup {
+    width: 95%;
+  }
+
+  main .container-about .about button {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+
+  main .container-form form,
+  main .container-popup .popup,
+  main .container-about .about,
+  main .container-popup-remove .popup {
+    width: 80%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 965px) {
+
+  main .container-form form,
+  main .container-popup .popup,
+  main .container-about .about,
+  main .container-popup-remove .popup {
+    width: 50%;
+  }
+
+  main .container-about .about button {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+  }
+}

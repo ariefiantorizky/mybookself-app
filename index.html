@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="author" content="Ariefianto Rizky">
+    <meta name="description"
+        content="MyBookSelf adalah situs website yang berfungsi untuk menyimpan semua data-data buku yang pernah kamu baca.">
+
+
+    <title>MyBookSelf - Simpan buku yang sudah kamu baca</title>
+
+    <!-- LINK -->
+    <link rel="shortcut icon" href="ASET/logo-white-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="ASET/brand-logo.png" alt="Brand Logo">
+
+        <section>
+            <button title="Save Your Book" id="save-book"><i class="bi bi-plus"></i></button>
+            <button title="About"><i class="bi bi-question-circle-fill"></i></button>
+        </section>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="header">
+                    <i class="bi bi-x"></i>
+                    Belum Dibaca
+                </div>
+
+                <div id="list-book-uncompleted" class="list-book">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <i class="bi bi-check"></i>
+                    Selesai dibaca
+                </div>
+
+                <div id="list-book-completed" class="list-book">
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOM -->
+
+        <div class="container-form">
+            <form action="#" autocomplete="off" id="form">
+                <div class="header-form">
+                    <i class="bi bi-bookmark-fill"></i>
+                    <h3>Simpan Buku</h3>
+                </div>
+                <div class="body-form">
+                    <div class="input-form">
+                        <label for="book-title">Judul Buku</label>
+                        <input type="text" id="book-title" required placeholder="Membangun Aplikasi Mobile Dengan PWA">
+                    </div>
+
+                    <div class="input-form">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" required placeholder="Hendra Santoso">
+                    </div>
+
+                    <div class="input-form">
+                        <label for="publication">Tahun Terbit</label>
+                        <input type="number" id="publication" required placeholder="2019">
+                    </div>
+
+                    <button type="submit" id="simpan">Simpan</button>
+                    <button type="button" id="close-tab-form">Keluar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="container-popup">
+            <div class="popup">
+                <img src="ASET/check-color.svg" alt="">
+
+                <h3><b>Selamat</b> kamu telah membaca buku hingga akhir, dan tetap semangat membaca yaa</h3>
+                <button id="tutup-popup">Keluar</button>
+            </div>
+        </div>
+
+        <div class="container-popup-remove">
+            <div class="popup">
+                <img src="ASET/red-x.svg" alt="">
+
+                <h3>Yahh :( Buku kamu sudah terhapus</h3>
+                <button id="oke">Okee</button>
+            </div>
+        </div>
+
+        <div class="container-about">
+            <div class="about">
+                <img src="ASET/logo-color.png" alt="">
+                <h2>About MyBookSelf</h2>
+                <p><b>MyBookSelf</b> adalah sebuah aplikasi berbasis website yang dirancang untuk semua pengguna
+                    khususnya para
+                    pembaca dan senang mengoleksi buku. Website ini dikembangkan menggunakan teknologi Javascript dan
+                    Untuk penyimpanan berbasis LocalStorage, yang artinya setiap browser akan berbeda - beda
+                    penyimpanannya.</p>
+                <p>Developer ingin mengembangkan website ini yang nantinya akan bermanfaat bagi semua pengguna. Selain
+                    itu akan ada update secara berkala agar pengguna merasa puas terhadap aplikasi website ini. Jika ada
+                    kritik dan saran, silahkan kirimkan melalui No. +62xxxxxxxxxx </p>
+
+                <button id="close-tab-about">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="JS/data.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/index.js"></script>
+    <script>
+        const saveBook = document.getElementById("save-book");
+        const containerForm = document.querySelector(".container-form");
+        const closeTabForm = document.getElementById("close-tab-form");
+        const containerPopup = document.querySelector(".container-popup");
+        const closeTabPopup = document.getElementById("tutup-popup");
+        const containerRemovePopup = document.querySelector(".container-popup-remove");
+        const closeRemoveBookButton = document.getElementById("oke");
+
+
+        saveBook.addEventListener("click", function () {
+            containerForm.classList.toggle("modals");
+        });
+
+        closeTabForm.addEventListener("click", function () {
+            containerForm.classList.toggle("modals");
+        })
+
+        closeTabPopup.addEventListener("click", function () {
+            containerPopup.classList.toggle("modals");
+        });
+
+        closeRemoveBookButton.addEventListener("click", function () {
+            containerRemovePopup.classList.toggle("modals")
+        })
+    </script>
+</body>
+
+</html>
